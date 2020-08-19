@@ -1,1 +1,1 @@
-from logpoint import Logpoint
+from .logpoint import Logpoint

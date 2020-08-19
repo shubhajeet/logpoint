@@ -6,7 +6,7 @@ with open("README.md","r") as fh:
 
 setuptools.setup(
     name="logpoint", # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Sujit Maharjan",
     author_email="shubhajeet.per@gmail.com",
     description="implements logpoint api",
