@@ -243,9 +243,3 @@ class Logpoint:
         return response
 
 
-if __name__ == "__main__":
-    logpoint = Logpoint("10.45.9.141","admin","d2845bfc94d9f2f92bb6f92a9edb31ee")
-    queryData = logpoint.create_search_query("| chart count() by device_ip")
-    search = logpoint.get_search_log(queryData)
-    search_id = search.json()["search_id"]
-    print(logpoint.get_logs(search_id))
