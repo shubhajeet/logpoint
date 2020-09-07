@@ -1,12 +1,12 @@
 from logpoint import *
 
 import argparse
-parser = argparse.ArgumentParser(prog="python -m logpoint","Perform a simple search on logpoint")
+parser = argparse.ArgumentParser(prog="python -m logpoint",description="Perform a simple search on logpoint")
 
-parser.add_argument("logpoint","ip or domain of the logoint machine")
-parser.add_argument("user","user on behalf of which search is be performed")
-parser.add_argument("secret_key","secret key that is used to autheticate the user")
-parser.add_argument("query","search query")
+parser.add_argument("logpoint",help="ip or domain of the logoint machine")
+parser.add_argument("user",help="user on behalf of which search is be performed")
+parser.add_argument("secret_key",help="secret key that is used to autheticate the user")
+parser.add_argument("query",help="search query")
 
 args = parser.parse_args()
 logpoint = Logpoint(args.logpoint, args.user, args.secret_key, args.query)

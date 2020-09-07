@@ -1,8 +1,8 @@
 import requests
 import json
-import enum
+from enum import Enum
 
-class AllowedData(string,Enum):
+class AllowedData(str,Enum):
     """
     Different data that we can get from the logpoint api
     """
@@ -178,26 +178,26 @@ class Logpoint:
         return response
 
     def resolve_incidents(self,incident_ids):
-         """
+        """
         Add comment to the incident
         :param id: incident id
         :type id: str
         :param comments: comment to be placed
         :type comments: str
-
+        
         :return response object
         """
         api_path = "https://"+self.ip+"/resolve_incident"
         queryData = { "version": 0.1,
                       "incident_ids": incident_ids}
         req_data = {'username': self.username,
-                  'secret_key': self.secret_key,
-                  "requestData": json.dumps(queryData) }
+                    'secret_key': self.secret_key,
+                    "requestData": json.dumps(queryData) }
         response = requests.post(api_path, data=req_data, verify=False)
         return response
-
+    
     def close_incidents(self,incident_ids):
-         """
+        """
         closes the incident
         :param incident_ids: incident id
         :type incident_ids: str
@@ -214,7 +214,7 @@ class Logpoint:
         return response
 
     def reopen_incidents(self,incident_ids):
-         """
+        """
          Reopens the incident
         :param incident_ids: incident id
         :type incident_ids: str
@@ -230,7 +230,7 @@ class Logpoint:
         response = requests.post(api_path, data=req_data, verify=False)
         return response
 
-     def get_users(self):
+    def get_users(self):
         """
         Get users of the logpoint
         :return user data in json

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'logpointapi'
+project = 'logpoint'
 copyright = '2020, Sujit Maharjan <mail@maharjansujit.com.np>'
 author = 'Sujit Maharjan <mail@maharjansujit.com.np>'
 
