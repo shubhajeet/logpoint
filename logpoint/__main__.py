@@ -9,8 +9,8 @@ parser.add_argument("secret_key",help="secret key that is used to autheticate th
 parser.add_argument("query",help="search query")
 
 args = parser.parse_args()
-logpoint = Logpoint(args.logpoint, args.user, args.secret_key, args.query)
-queryData = logpoint.create_search_query("| chart count() by device_ip")
+logpoint = Logpoint(args.logpoint, args.user, args.secret_key)
+queryData = logpoint.create_search_query(args.query)
 search = logpoint.get_search_log(queryData)
 search_id = search.json()["search_id"]
 print(logpoint.get_logs(search_id))
