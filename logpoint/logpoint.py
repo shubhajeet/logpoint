@@ -25,7 +25,7 @@ class Logpoint:
         :param data: data that you want to be fetched
         :type data: AllowedData
 
-        :returns data in json
+        :returns:data in json
         """
         api_path = "https://"+self.ip+"/getalloweddata"
         req_data = {'username': self.username,
@@ -40,7 +40,7 @@ class Logpoint:
         :param data:
         :type data:
 
-        :returns search id in json
+        :returns:search id in json
         """
         api_path = "https://"+self.ip+"/getsearchlogs"
         req_data = {'username': self.username,
@@ -55,7 +55,7 @@ class Logpoint:
         :param search_id: search id
         :type search_id: str
 
-        :returns logs in json
+        :returns:s:logs in json
         """
         queryData = {"search_id": search_id}
         all_results = []
@@ -80,7 +80,7 @@ class Logpoint:
         :param time_range: time range
         :type time_range: str
 
-        :returns search query in json
+        :returns:search query in json
         """
         queryData = {"timeout": 90,
                      "client_name": "gui",
@@ -100,7 +100,7 @@ class Logpoint:
         :param ts_to: timestamp to which triggered incident is to be fetched
         :type ts_to: str
 
-        :returns data in json
+        :returns:data in json
         """
         api_path = "https://"+self.ip+"/incidents"
         queryData = { "version": 0.1,
@@ -123,7 +123,7 @@ class Logpoint:
         :param date: date
         :type date: str
 
-        :returns data in json
+        :returns:data in json
         """
         api_path = "https://"+self.ip+"/get_data_from_incidents"
         queryData = { "incident_obj_id": incident_obj_id,
@@ -133,7 +133,7 @@ class Logpoint:
                   'secret_key': self.secret_key,
                   "requestData": json.dumps(queryData) }
         response = requests.post(api_path, data=req_data, verify=False)
-        return response
+        returns: response
 
     def get_incident_states(self,ts_from,ts_to):
         """
@@ -143,7 +143,7 @@ class Logpoint:
         :param ts_to: timestamp to which triggered incident is to be fetched
         :type ts_to: str
 
-        :returns data in json
+        :returns:s:data in json
         """
         api_path = "https://"+self.ip+"/incident_states"
         queryData = { "version": 0.1,
@@ -163,7 +163,7 @@ class Logpoint:
         :param comments: comment to be placed
         :type comments: str
 
-        :return response object
+        :returns:s: response object
         """
         api_path = "https://"+self.ip+"/add_incident_comment"
         queryData = { "version": 0.1,
@@ -185,7 +185,7 @@ class Logpoint:
         :param comments: comment to be placed
         :type comments: str
         
-        :return response object
+        :returns: response object
         """
         api_path = "https://"+self.ip+"/resolve_incident"
         queryData = { "version": 0.1,
@@ -202,7 +202,7 @@ class Logpoint:
         :param incident_ids: incident id
         :type incident_ids: str
 
-        :return response object
+        :returns: response object
         """
         api_path = "https://"+self.ip+"/close_incident"
         queryData = { "version": 0.1,
@@ -219,7 +219,7 @@ class Logpoint:
         :param incident_ids: incident id
         :type incident_ids: str
 
-        :return response object
+        :returns: response object
         """
         api_path = "https://"+self.ip+"/reopen_incident"
         queryData = { "version": 0.1,
@@ -233,7 +233,7 @@ class Logpoint:
     def get_users(self):
         """
         Get users of the logpoint
-        :return user data in json
+        :returns: user data in json
         """
         api_path = "https://"+self.ip+"/get_users"
         req_data = {'username': self.username,
