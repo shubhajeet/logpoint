@@ -22,6 +22,7 @@ class Logpoint:
     def get_logpoint_data(self, data):
         """
         Get the allowed data from the logpoint
+
         :param data: data that you want to be fetched
         :type data: AllowedData
 
@@ -37,6 +38,7 @@ class Logpoint:
     def get_search_log(self, data):
         """
         Get the search id
+
         :param data:
         :type data:
 
@@ -52,6 +54,7 @@ class Logpoint:
     def get_logs(self, search_id):
         """
         Get all the logs from the search id
+
         :param search_id: search id
         :type search_id: str
 
@@ -73,6 +76,7 @@ class Logpoint:
     def create_search_query(self, query, repo=[], time_range="Last 30 days"):
         """
         Get create the search query
+
         :param query: logpoint search query
         :type query: str
         :param repo: list of repo
@@ -95,6 +99,7 @@ class Logpoint:
     def get_incidents(self,ts_from,ts_to):
         """
         Gets triggered incidents
+
         :param ts_from: timestamp from which triggered incident is to be fetched
         :type ts_from: str
         :param ts_to: timestamp to which triggered incident is to be fetched
@@ -116,6 +121,7 @@ class Logpoint:
     def get_data_from_incidents(self,incident_obj_id,incident_id,date):
         """
         Gets the detail data from the incident
+
         :param incident_obj_id: incident object id
         :type incident_obj_id: str
         :param incident_id: incident id
@@ -138,6 +144,7 @@ class Logpoint:
     def get_incident_states(self,ts_from,ts_to):
         """
         Get the states of incident
+
         :param ts_from: timestamp from which triggered incident is to be fetched
         :type ts_from: str
         :param ts_to: timestamp to which triggered incident is to be fetched
@@ -158,6 +165,7 @@ class Logpoint:
     def add_incident_comment(self,id,comments):
         """
         Add comment to the incident
+
         :param id: incident id
         :type id: str
         :param comments: comment to be placed
@@ -180,6 +188,7 @@ class Logpoint:
     def resolve_incidents(self,incident_ids):
         """
         Add comment to the incident
+
         :param id: incident id
         :type id: str
         :param comments: comment to be placed
@@ -199,6 +208,7 @@ class Logpoint:
     def close_incidents(self,incident_ids):
         """
         closes the incident
+
         :param incident_ids: incident id
         :type incident_ids: str
 
@@ -216,6 +226,7 @@ class Logpoint:
     def reopen_incidents(self,incident_ids):
         """
          Reopens the incident
+
         :param incident_ids: incident id
         :type incident_ids: str
 
@@ -233,6 +244,7 @@ class Logpoint:
     def get_users(self):
         """
         Get users of the logpoint
+
         :returns: user data in json
         """
         api_path = "https://"+self.ip+"/get_users"
