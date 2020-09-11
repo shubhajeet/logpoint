@@ -1,5 +1,7 @@
 import requests
 import json
+import time
+
 from enum import Enum
 
 class AllowedData(str,Enum):
@@ -71,6 +73,7 @@ class Logpoint:
             except Exception as e:
                 print(e)
                 break
+            time.sleep(60)
         return all_results
 
     def create_search_query(self, query, repo=[], time_range="Last 30 days"):
